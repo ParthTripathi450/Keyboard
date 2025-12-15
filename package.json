@@ -6,20 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@prismicio/client": "^7.21.0",
+    "@prismicio/next": "^2.0.2",
+    "@prismicio/react": "^3.2.2",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
+    "@types/three": "^0.182.0",
+    "clsx": "^2.1.1",
+    "gsap": "^3.14.2",
+    "leva": "^0.10.1",
     "next": "16.0.8",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-dom": "19.2.1",
+    "react-icons": "^5.5.0",
+    "stripe": "^20.0.0",
+    "three": "^0.182.0"
   },
   "devDependencies": {
+    "@slicemachine/adapter-next": "^0.3.89",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "slice-machine-ui": "^2.20.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

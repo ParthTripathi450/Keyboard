@@ -9,6 +9,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { useKeyboardTyping } from "@/components/useKeyboardTyping";
+
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -75,8 +77,10 @@ function CameraController() {
 export function Scene() {
   const keyboardGroupRef = useRef<THREE.Group>(null);
   const keycapRef = useRef<THREE.Group>(null);
-  const keyboardAnimationRef = useRef<KeyboardRefs>(null);
+  const keyboardAnimationRef = useRef<KeyboardRefs | null>(null);
+  
   const [lightIntensityScaler, setLightIntensityScaler] = useState(0);
+  useKeyboardTyping(keyboardAnimationRef);
 
   const scalingFactor = window.innerWidth <= 500 ? 0.5 : 1;
 
@@ -199,7 +203,7 @@ export function Scene() {
             // Collect all switches into a single array
             const allSwitches: THREE.Object3D[] = [];
 
-            // Gather all switches from all rows
+
             [
               switchRefs.functionRow.current,
               switchRefs.numberRow.current,
@@ -214,7 +218,6 @@ export function Scene() {
               }
             });
 
-            // Define keycaps in actual left-to-right COLUMN order across the keyboard
             const keyboardColumns = [
               ["esc", "grave", "tab", "caps", "lshift", "lcontrol"],
               ["f1", "one", "q", "a", "z", "lalt"],

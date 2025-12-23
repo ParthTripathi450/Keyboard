@@ -38,7 +38,7 @@ export function Navbar() {
         href="/"
         className="shrink-0 hover:scale-105 motion-safe:transition"
       >
-        <Logo className="h-6 w-auto md:h-8" />
+
       </Link>
       <div className="flex gap-3 md:gap-4">
         <button
